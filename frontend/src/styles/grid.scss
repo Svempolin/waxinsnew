@@ -1,0 +1,109 @@
+@use './breakpoints' as breakpoints;
+$white: #FFF;
+$black: #000;
+$grey: #6f6f6f;
+$gutter: 2rem;
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+
+.container {
+  width: 100%;
+  max-width: 160rem;
+  margin: 0 auto;
+
+  @include breakpoints.breakpoint('small') {
+      width: calc(100% - 8rem);
+  }
+
+  @include breakpoints.breakpoint('medium') {
+      width: calc(100% - 16rem);
+  }
+
+  &-fluid {
+      width: 100%;
+      max-width: 100%;
+  }
+
+  &-grid{
+      width: 100vw;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  min-height: 0;
+  min-width: 0;
+  width: 100%;
+
+  & + & {
+      margin-top: $gutter * 2;
+  }
+
+  &-insta + &-insta {
+      margin-top: 0;
+  }
+  
+  @include breakpoints.breakpoint('small') {
+      flex: 1 1 0px;
+      
+      & + & {
+          margin-top: 0;
+      }
+      
+      &-large {
+          flex: 2 1 0px;
+      }
+
+      &:not(.no-gutters) {
+          padding-left: $gutter;
+          padding-right: $gutter;
+      }
+  }
+
+  &-text:not(.no-gutters) {
+      padding-left: $gutter;
+      padding-right: $gutter;
+  }
+
+  
+  &-team {
+      margin-top: 2rem !important;
+      flex-basis: 50%;
+      max-width: 50%;
+
+      @include breakpoints.breakpoint('small') {
+          flex-basis: 33.33%;
+          max-width: 33.33%;
+      }
+  }
+
+  &-insta {
+      max-width: 50%;
+      flex-basis: 50%;
+
+      @include breakpoints.breakpoint('small') {
+          max-width: 25%;
+          flex-basis: 25%;
+      }
+  }
+}
+
+@include breakpoints.breakpoint('small') {
+  .medium {
+      &-order {
+          &-1 {
+              order: 1;
+          }
+
+          &-2 {
+              order: 2;
+          }
+      }
+  }
+}

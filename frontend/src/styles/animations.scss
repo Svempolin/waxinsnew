@@ -1,0 +1,5 @@
+$slide-distance: 30px;
+
+[data-sal='slide-up'] {
+  transform: translateY($slide-distance);
+}

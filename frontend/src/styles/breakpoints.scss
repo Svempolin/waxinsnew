@@ -1,0 +1,18 @@
+@use 'sass:map';
+
+$breakpoints: (
+  'small':  767px,
+  'medium': 992px,
+  'large':  1200px,
+  'xlarge': 1600px,
+) !default;
+
+@mixin breakpoint($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) { // Modern metod
+    @media (min-width: map.get($breakpoints, $breakpoint)) { // Modern metod
+      @content;
+    }
+  } @else {
+    @warn "No value found for breakpoint '#{$breakpoint}'. Available breakpoints: #{map.keys($breakpoints)}.";
+  }
+}

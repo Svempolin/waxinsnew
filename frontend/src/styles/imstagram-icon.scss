@@ -1,0 +1,26 @@
+.instagram-icon {
+  display: block;
+  z-index: 1000;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 15px;
+  background-color: transparent;
+  background-size: cover;
+  background-position: 50%;
+  left: 15px;
+  background-image: url('./../images/instagram-logo.png');
+}
+.heart-icon {
+  display: inline-block;
+  z-index: 1000;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  background-color: transparent;
+  background-size: cover;
+  background-position: 50%;
+  top: 4px;
+  margin-right: 8px;
+  background-image: url('./../images/heart.png');
+}

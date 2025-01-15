@@ -1,0 +1,376 @@
+
+@use './variables.scss';
+@use './reset.scss';
+@use './breakpoints.scss';
+@use './animations.scss';
+@use './grid.scss';
+@use './menus.scss';
+
+// @use './instagram.scss';
+
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* Now 10px = 1rem! */
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px; /* px fallback */
+  font-size: 1.6rem; /* default font-size for document */
+  line-height: 1.5; /* a nice line-height */
+}
+
+/* for everything else, rem = px/10 */
+footer {
+  font-size: 13px;
+  font-size: 1.3rem;
+}
+
+/* you can safely nest rems, it's still 1rem = 10px */
+footer small {
+  font-size: 10px;
+  font-size: 1rem;
+}
+
+section {
+  margin: 10vw 0 0;
+}
+
+.mt {
+  margin-top: 5vw;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.125em;
+  font-size: 1.4rem;
+  margin-bottom: 2.6rem;
+}
+
+.white {
+  color: $white;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  letter-spacing: 0.125em;
+  font-size: 1.2rem;
+}
+
+p{
+font-family: 'Roboto', sans-serif;
+font-weight: 300;
+letter-spacing: 1.3px;
+font-size: 13px;
+}
+
+b{
+  font-weight: 500;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0 0 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.15;
+  letter-spacing: 0.075em;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 2.252em;
+
+  @media screen and (min-width: 540px) {
+    font-size: 3.052em;
+  }
+}
+
+h2 {font-size: 2.441em;}
+h3 {font-size: 1.953em;}
+h4 {font-size: 1.563em;}
+h5 {font-size: 1.25em;}
+small {font-size: 0.8em;}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  @include breakpoints.breakpoint('small') { // Uppdaterad med namespace
+    height: 100%;
+  }
+}
+
+.h-70 {
+  @include breakpoints.breakpoint('small') {
+    height: 50%;
+  }
+}
+
+
+.team__image{
+  max-width: 200px;
+  max-height: 200px;
+  margin: auto;
+}
+
+.hero-container {
+min-width: 100vw !important;
+margin-left: 0px !important;
+margin-right: 0px !important;
+padding-left: 0px !important;
+padding-right: 0px !important;
+
+}
+.hero-tag {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  font-size: 2rem;
+  height: auto;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  @media only screen and (max-width: 600px) {
+    width: 70%;
+    top: 54%;
+    height: auto;
+  }
+}
+.reservation-container {
+      display: flex ;
+      flex-direction: row;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+        top: 80%;
+        left: 50%;
+        width: 30%;
+        height: auto;
+        transform: translate(-50%, -50%);
+
+        @media only screen and (max-width: 600px) {
+          top: 75%;
+          width: 70%;
+          gap: 10px;
+          height: auto;
+          flex-direction: column;
+
+        }
+}
+.button {
+  display: inline-block;
+  padding: 1rem 2.6rem;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: $black;
+    color: $white;
+  }
+
+  &-booking {
+    width: 235px; 
+    text-align: center;
+  }
+
+  &-outline {
+    border: 1px solid $black;
+  }
+
+  &-white {
+    color: $white;
+    border-color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: $white;
+      color: $black;
+    }
+  }
+}
+
+.hero-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.mb {
+  margin-bottom: 1.3rem;
+
+  &-2 {
+    margin-bottom: 2.6rem;
+  }
+}
+
+.footer {
+  margin: 10vw 0 0;
+  padding: $gutter * 2 0;
+  border-top: 1px solid $grey;
+}
+
+.job {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  & + & {
+    margin-top: $gutter * 3;
+  }
+
+  @include breakpoints.breakpoint('small') {
+    h4 {
+      flex-basis: 15%;
+      max-width: 20%;
+    }
+
+    p {
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+
+  }
+}
+
+.logo {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 25%;
+  height: auto;
+  transform: translate(-50%, -50%);
+
+  @media only screen and (max-width: 600px) {
+    width: 70%;
+    top: 33%;
+    height: auto;
+  }
+}
+
+.contact__logo {
+  width: 30%;
+  @media only screen and (max-width: 600px) {
+    width: 70%;
+  }
+}
+
+.contact__info {
+  a {
+    color: $black !important;
+  }
+}
+
+#ot-reservation-widget {
+  display: none;
+}
+
+.column-insta {
+  position: relative;
+
+  .likes {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    font-size: 18px;
+    color: white;
+    z-index: 999;
+  }
+
+  .insta__title{
+    position: absolute;
+    display: block;
+    top: 22px;
+    z-index: 999;
+    left: 58px;
+    color: white;
+  }
+
+  &:hover {
+    .overlay {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+  }
+
+}
+
+
+
+#video-section{
+  height: 100vh
+}
+
+.video-background {
+  min-width: 100vw;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  transform-style: preserve-3d;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+
+
+video {
+    min-width: 100vw;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+    
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  transition: .5s ease;
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,0.9262079831932774) 0%, rgba(0,0,0,0) 39%, rgba(0,0,0,0) 100%);
+  overflow: hidden;
+}
