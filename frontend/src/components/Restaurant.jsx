@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from 'react';
-// import imageUrlBuilder from '@sanity/image-url';
-import { useSanityClient } from '@sanity/client';
+import client, { urlFor } from '../sanityClient';
+
 import { PortableText } from '@portabletext/react';
 import '../styles/app.scss';
 
-// Konfigurera Sanity-klienten
-const client = useSanityClient({
-  projectId: 'fz5xi0uj', // Lägg in ditt Sanity-projekt-ID
-  dataset: 'production', // Justera om du använder en annan dataset
-  apiVersion: '2023-01-01', // Anpassa version efter ditt behov
-  useCdn: true,
-});
+// // Konfigurera Sanity-klienten
+// const client = useSanityClient({
+//   projectId: 'fz5xi0uj', // Lägg in ditt Sanity-projekt-ID
+//   dataset: 'production', // Justera om du använder en annan dataset
+//   apiVersion: '2023-01-01', // Anpassa version efter ditt behov
+//   useCdn: true,
+// });
 
-const builder = imageUrlBuilder(client);
+// const builder = imageUrlBuilder(client);
 
-// Funktion för att bygga bild-URL
-function urlFor(source) {
-  return builder.image(source);
-}
+// // Funktion för att bygga bild-URL
+// function urlFor(source) {
+//   return builder.image(source);
+// }
 
 const Restaurant = () => {
   const [restaurantData, setRestaurantData] = useState(null);
