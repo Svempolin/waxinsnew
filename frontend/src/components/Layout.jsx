@@ -4,7 +4,8 @@ import Footer from "./Footer";
 import '../styles/app.scss'
 import VideoHeader from './videohero'
 import About from "./About";
-import Restaurant from "./restaurant";
+import Restaurant from "./Restaurant";
+
 
 
 const Layout = ({ children }) => {
