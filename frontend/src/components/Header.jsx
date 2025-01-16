@@ -23,7 +23,7 @@ const Header = () => {
         className={`nav-trigger${showNav ? ' active' : ''}`}
         onClick={() => setShowNav(!showNav)}
       >
-        <span>hej</span>
+        <span></span>
         <span></span>
         <span></span>
       </a>
