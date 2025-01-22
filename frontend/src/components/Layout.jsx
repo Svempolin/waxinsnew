@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import '../styles/app.scss'
+
 import VideoHeader from './videohero'
 import About from "./About";
 import Restaurant from "./ResturantCorrect";
@@ -11,11 +11,15 @@ import Imagegrid from "./Imagegrid";
 import Kitchen from "./Kitchen";
 import Join from "./Join";
 import Contact from "./Contact";
-
+import { HelmetProvider } from "react-helmet-async";
+import DocHead from "./Helmet";
+import '../styles/app.scss'
 
 const Layout = ({ children }) => {
   return (
     <div>
+      <HelmetProvider>
+      <DocHead title="Home"/>
       <Header />
       <VideoHeader />
       <About />
@@ -28,6 +32,7 @@ const Layout = ({ children }) => {
       <Contact />
       {/* <main>{children}</main> */}
       <Footer />
+      </HelmetProvider>
     </div>
   );
 };

@@ -8,7 +8,8 @@ import kitchen from './kitchen';
 import joinItem from './joinSection';
 import jobItem from './jobItem';
 import contactPage from './contactPage';
+import siteMetadata from './siteMetadata';
 
-const schemaTypes = [restaurantPage, about, blockContent, bar, catering,imageGridItem, kitchen, joinItem, jobItem, contactPage];
+const schemaTypes = [restaurantPage, about, blockContent, bar, catering,imageGridItem, kitchen, joinItem, jobItem, contactPage, siteMetadata];
 
 export default schemaTypes;
