@@ -1,27 +1,37 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
+import client, { urlFor } from "../sanityClient";
+import { PortableText } from "@portabletext/react";
 
 const About = () => {
   const [aboutData, setAboutData] = useState(null);
 
-  // Mock-fetch data för frontend-start
   useEffect(() => {
     const fetchData = async () => {
-      // Här kan du använda Sanity's API senare
-      const mockData = {
-        aboutTitle: "About Us",
-        aboutText: {
-          json: "This is a placeholder text. Replace this with content from Sanity.",
-        },
-        aboutImage: "https://via.placeholder.com/600x400", // Mockad bild
-      };
-      setAboutData(mockData);
+      const query = `
+        *[_type == "about"][0]{
+          aboutTitle,
+          aboutText,
+          aboutImage{
+            asset->{
+              url
+            }
+          }
+        }
+      `;
+
+      try {
+        const result = await client.fetch(query);
+        console.log("About Data:", result); // För debugging
+        setAboutData(result);
+      } catch (error) {
+        console.error("Error fetching About data:", error);
+      }
     };
+
     fetchData();
   }, []);
 
-  if (!aboutData) {
-    return <div>Loading...</div>;
-  }
+  if (!aboutData) return <div>Loading...</div>;
 
   return (
     <section>
@@ -34,7 +44,7 @@ const About = () => {
             data-sal-easing="cubic-bezier(0.215, 0.61, 0.355, 1)"
           >
             <h1>{aboutData.aboutTitle}</h1>
-            <div>{aboutData.aboutText.json}</div>
+            <PortableText value={aboutData.aboutText} />
           </div>
           <div
             className="column"
@@ -45,8 +55,8 @@ const About = () => {
           >
             <img
               className="h-100"
-              src={aboutData.aboutImage}
-              alt="About section"
+              src={urlFor(aboutData.aboutImage.asset.url)}
+              alt={aboutData.aboutTitle || "About section"}
             />
           </div>
         </div>

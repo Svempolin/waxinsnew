@@ -1,9 +1,26 @@
-import React from 'react'
+import React from 'react';
 
-function Footer() {
+const Footer = () => {
   return (
-    <div>Footer</div>
-  )
-}
+    <footer className="footer">
+      <div className="container">
+        <div className="row">
+          {/* Tom kolumn för layout */}
+          <div className="column"></div>
 
-export default Footer
+          {/* Text centrerad i mitten */}
+          <div className="column text-center">
+            <p>
+              <small>&copy; 2019 Waxins. All Rights Reserved.</small>
+            </p>
+          </div>
+
+          {/* Tom kolumn för layout */}
+          <div className="column"></div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

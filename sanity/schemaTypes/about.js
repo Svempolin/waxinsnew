@@ -13,6 +13,7 @@ export default {
       name: "aboutText",
       title: "Text",
       type: "blockContent", // Du behöver lägga till ett blockContent-schema för detta
+   
       description: "The text content for the About section",
     },
     {

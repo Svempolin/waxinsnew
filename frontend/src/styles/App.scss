@@ -33,6 +33,18 @@ footer small {
   font-size: 1rem;
 }
 
+
+
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* Gör att bilden beskärs snyggt om den är för stor */
+}
+
+
 section {
   margin: 10vw 0 0;
 }
@@ -272,7 +284,11 @@ padding-right: 0px !important;
 }
 
 .contact__logo {
-  width: 30%;
+  display: block;
+  margin: 0 auto; /* Centrerar logotypen horisontellt */
+  width: 30%; /* Standardstorlek */
+  max-width: 200px; /* Begränsar maximal storlek */
+  height: auto;
   @media only screen and (max-width: 600px) {
     width: 70%;
   }

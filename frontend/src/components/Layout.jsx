@@ -4,8 +4,13 @@ import Footer from "./Footer";
 import '../styles/app.scss'
 import VideoHeader from './videohero'
 import About from "./About";
-import Restaurant from "./Restaurant";
-
+import Restaurant from "./ResturantCorrect";
+import Bar from "./Bar";
+import Catering from "./Catering";
+import Imagegrid from "./Imagegrid";
+import Kitchen from "./Kitchen";
+import Join from "./Join";
+import Contact from "./Contact";
 
 
 const Layout = ({ children }) => {
@@ -15,7 +20,13 @@ const Layout = ({ children }) => {
       <VideoHeader />
       <About />
       <Restaurant />
-      <main>{children}</main>
+      <Bar />
+      <Catering />
+      <Imagegrid />
+      <Kitchen />
+      <Join />
+      <Contact />
+      {/* <main>{children}</main> */}
       <Footer />
     </div>
   );

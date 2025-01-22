@@ -1,39 +1,39 @@
 export default {
   name: 'restaurantPage',
-  type: 'document',
   title: 'Restaurant Page',
+  type: 'document',
   fields: [
     {
+      name: 'restaurantImage',
+      title: 'Restaurant Image',
+      type: 'image',
+      options: { hotspot: true },
+    },
+    {
       name: 'restaurantTitle',
-      type: 'string',
       title: 'Restaurant Title',
+      type: 'string',
     },
     {
       name: 'restaurantText',
-      type: 'array',
       title: 'Restaurant Text',
+      type: 'array',
       of: [{ type: 'block' }],
     },
     {
-      name: 'restaurantImage',
-      type: 'image',
-      title: 'Restaurant Image',
+      name: 'wineMenu',
+      title: 'Wine Menu',
+      type: 'file',
     },
     {
       name: 'restaurantMenu',
-      type: 'file',
       title: 'Restaurant Menu',
+      type: 'file',
     },
     {
       name: 'dessertMenu',
-      type: 'file',
       title: 'Dessert Menu',
-    },
-    {
-      name: 'wineMenu',
       type: 'file',
-      title: 'Wine Menu',
     },
   ],
 };
-
